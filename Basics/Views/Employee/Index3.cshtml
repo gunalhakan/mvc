@@ -1,0 +1,17 @@
+@model List<Employee>
+<h3 class="display-6">
+    Employees
+</h3>
+<div class="mt-5">
+   
+    @foreach(Employee emp  in Model)
+    {
+        <span class="text-success mx-4">@emp.Id</span>
+        <span class="text-success mx-4">@emp.FullName</span>
+        <span class="text-success mx-4">@emp.Age</span>
+        <span class="text-success mx-4">@emp.Id</span>
+        <hr>
+    }
+</div>
+
+
