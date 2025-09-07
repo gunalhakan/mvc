@@ -1,0 +1,35 @@
+@model IEnumerable<Candidate>
+@using CourseRegister.Models
+
+@if (Model.Count() > 0)
+{
+    <h4 class="display-5">Applications</h4>
+    <table class="table table-bordered table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Full Name</th>
+                <th>Age</th>
+                <th>Selected Course</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Candidate candidate in Model)
+            {
+                <tr>
+                    <td>@candidate.Email</td>
+                    <td>@candidate.FullName</td>
+                    <td>@candidate.Age</td>
+                    <td>@candidate.SelectedCourse</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}   
+else
+{
+    <div class="alert alert-info">
+        There is not any application yet.
+        Please click here to click <a class="alert-link" asp-controller="Course" asp-action="Apply">apply</a>.
+    </div>
+}
