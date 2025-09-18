@@ -1,19 +1,18 @@
-@model StoreApp.Models.Product
+@model Product 
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details</title>
-</head>
-
-<body>
     <h3>@Model.ProductName</h3>
     <p>@Model.Price</p>
     <hr>
-    <a href="/Product/">Products</a>
-</body>
 
-</html>
+    <div class="btn-group">
+        <a class="btn btn-info" asp-controller="Home" asp-action="Index">
+            <i class="fa-solid fa-house"></i> Home
+        </a>
+        <a class="btn btn-outline-info" asp-controller="Product" asp-action="Index">
+            <i class="fa-solid fa-list"></i> Products
+        </a>
+    </div>
+@section Title{
+    Product Details
+}
